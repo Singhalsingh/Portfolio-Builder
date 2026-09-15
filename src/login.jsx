@@ -22,7 +22,7 @@ const Login = () => {
     };
 
   return (
-    <div className="login-container" style={{ paddingTop: '10rem', paddingBottom: '5rem', minHeight: '100vh' }}>
+    <div className="login-container" style={{ paddingTop: '10rem', paddingBottom: '5rem', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <header className="navbar">
         <div className="logo">Portfolio <span>Builder</span></div>
         <nav className="nav-links">
@@ -31,36 +31,36 @@ const Login = () => {
         </nav>
       </header>
 
-      <main style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--text-main)', marginBottom: '1rem' }}>
+      <main style={{ textAlign: 'center', width: '100%', maxWidth: '900px' }}>
+        <h1 style={{ fontSize: '3.5rem', fontWeight: '900', color: 'var(--text-main)', marginBottom: '1.5rem' }}>
           Welcome <span>Back</span>
         </h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-subtle)', marginBottom: '3rem' }}>
+        <p style={{ fontSize: '1.25rem', color: 'var(--text-subtle)', marginBottom: '4rem' }}>
            Enter your credentials below to access your account.
         </p>
         
-        <div style={{ backgroundColor: 'var(--card-bg)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '3rem', maxWidth: '400px', margin: '0 auto', textAlign: 'left' }}>
+        <div style={{ backgroundColor: 'var(--card-bg)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '4rem', textAlign: 'left', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
           
           <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ display: 'block', color: 'var(--text-main)', marginBottom: '0.5rem' }}>Email Address</label>
+              <label style={{ display: 'block', color: 'var(--text-main)', marginBottom: '0.75rem', fontSize: '1.1rem' }}>Email Address</label>
               <input 
                 type="email" 
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                style={{ width: '100%', padding: '0.75rem', borderRadius: '6px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)' }} 
+                style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '1rem' }} 
                 placeholder="you@company.com" 
               />
           </div>
 
-          <div style={{ marginBottom: '2rem' }}>
-              <label style={{ display: 'block', color: 'var(--text-main)', marginBottom: '0.5rem' }}>Password</label>
+          <div style={{ marginBottom: '2.5rem' }}>
+              <label style={{ display: 'block', color: 'var(--text-main)', marginBottom: '0.75rem', fontSize: '1.1rem' }}>Password</label>
               <input 
                 type="password" 
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
-                style={{ width: '100%', padding: '0.75rem', borderRadius: '6px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)' }} 
+                style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '1rem' }} 
                 placeholder="••••••••" 
               />
           </div>
@@ -68,42 +68,23 @@ const Login = () => {
           <button 
             onClick={handleLogin}
             className="hero-btn-primary" 
-            style={{ width: '100%', border: 'none', cursor: 'pointer', marginBottom: '1.5rem' }}>
+            style={{ width: '100%', border: 'none', cursor: 'pointer', marginBottom: '2rem', padding: '1rem', fontSize: '1.2rem' }}>
             Log In
           </button>
 
-          {/* Styled Register Link as an Outline Button */}
-          <div style={{ textAlign: 'center', fontSize: '0.9rem', color: 'var(--text-subtle)' }}>
-              New here? 
-              <Link 
-                to="/register" 
-                style={{ 
-                    display: 'block', 
-                    marginTop: '0.75rem',
-                    padding: '0.75rem', 
-                    borderRadius: '6px', 
-                    border: '1px solid var(--accent-color)', 
-                    color: 'var(--accent-color)', 
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                    fontWeight: '600',
-                    transition: 'all 0.2s ease-in-out'
-                }}
-                onMouseOver={(e) => {
-                    e.target.style.backgroundColor = 'var(--accent-color)';
-                    e.target.style.color = 'var(--card-bg)';
-                }}
-                onMouseOut={(e) => {
-                    e.target.style.backgroundColor = 'transparent';
-                    e.target.style.color = 'var(--accent-color)';
-                }}
-              >
-                Create an account
-              </Link>
+          <div style={{ textAlign: 'center', color: 'var(--text-subtle)' }}>
+              <span>New here?</span>
+                <Link to="/register" style={{ color: 'var(--accent)', marginLeft: '0.5rem', textDecoration: 'none', fontWeight: 'bold' }}>
+                  Create an account
+                </Link>
           </div>
 
         </div>
       </main>
+              
+      <footer className="footer-area" style={{ padding: '2rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: 'auto', width: '100%', maxWidth: '1400px' }}>
+        <p style={{ color: 'var(--text-subtle)' }}>&copy; 2026 Portfolio Builder AI. Created for the future.</p>
+      </footer>
     </div>
   );
 };

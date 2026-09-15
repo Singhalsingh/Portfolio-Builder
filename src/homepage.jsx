@@ -38,7 +38,7 @@ const HomePage = () => {
     border: '1px solid var(--border-color)',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
-    backgroundColor: 'transparent' // Remove black background
+    backgroundColor: 'black' // Remove black background
   };
 
   const [hoveredCard, setHoveredCard] = useState(null);
